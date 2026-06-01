@@ -1,2 +1,9 @@
 # Systém pro správu esport turnajů
-2025-p1a-inf-nis-DusanVrtal created by GitHub Classroom
+- zaznamenávání Esport turnajů/zápasů pro školy, firmy, atd...
+## Funkce
+- registrace týmů
+- generování pavouka
+- zapisování výsledků
+- statistiky hráčů
+- Discord propojení
+- tabulka/leaderboard
