@@ -7,3 +7,5 @@
 - statistiky hráčů
 - Discord propojení
 - tabulka/leaderboard
+## Link na web
+- https://pslib-cz.github.io/2025-p1a-inf-nis-DusanVrtal/
