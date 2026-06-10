@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400" width="100%" height="100%">
+  <style>
+    .node { fill: #f5f5f5; stroke: #333; stroke-width: 2; }
+    .component { fill: #fff; stroke: #666; stroke-width: 1; }
+    .text-title { font-family: sans-serif; font-size: 14px; font-weight: bold; fill: #333; }
+    .text-sub { font-family: sans-serif; font-size: 12px; fill: #666; }
+    .line { stroke: #333; stroke-width: 2; stroke-dasharray: 4,4; fill: none; }
+    .ext-node { fill: #e1d5e7; stroke: #9673a6; stroke-width: 2; }
+  </style>
+
+  <g transform="translate(30, 100)">
+    <rect x="0" y="0" width="200" height="150" class="node"/>
+    <text x="10" y="20" class="text-title">&lt;&lt;device&gt;&gt;</text>
+    <text x="10" y="40" class="text-title">Klientské zařízení</text>
+    <text x="10" y="60" class="text-sub">(Mobilní tel. / Počítač)</text>
+    
+    <rect x="20" y="80" width="160" height="50" class="component"/>
+    <text x="100" y="100" text-anchor="middle" class="text-title">&lt;&lt;browser&gt;&gt;</text>
+    <text x="100" y="115" text-anchor="middle" class="text-sub">Responzivní Web App</text>
+  </g>
+
+  <g transform="translate(320, 100)">
+    <rect x="0" y="0" width="220" height="150" class="node"/>
+    <text x="10" y="20" class="text-title">&lt;&lt;execution environment&gt;&gt;</text>
+    <text x="10" y="40" class="text-title">Aplikační Server</text>
+    
+    <rect x="20" y="70" width="180" height="60" class="component"/>
+    <text x="110" y="90" text-anchor="middle" class="text-title">&lt;&lt;component&gt;&gt;</text>
+    <text x="110" y="110" text-anchor="middle" class="text-title">REST API</text>
+    <text x="110" y="125" text-anchor="middle" class="text-sub">(Node.js / FastAPI)</text>
+  </g>
+
+  <g transform="translate(620, 100)">
+    <rect x="0" y="0" width="200" height="150" class="node"/>
+    <text x="10" y="20" class="text-title">&lt;&lt;database server&gt;&gt;</text>
+    <text x="10" y="40" class="text-title">Databázový cluster</text>
+    
+    <rect x="20" y="70" width="160" height="60" class="component"/>
+    <text x="100" y="90" text-anchor="middle" class="text-title">&lt;&lt;schema&gt;&gt;</text>
+    <text x="100" y="110" text-anchor="middle" class="text-title">PostgreSQL</text>
+  </g>
+
+  <g transform="translate(320, 290)">
+    <rect x="0" y="0" width="220" height="80" class="ext-node"/>
+    <text x="110" y="25" text-anchor="middle" class="text-title">&lt;&lt;external system&gt;&gt;</text>
+    <text x="110" y="45" text-anchor="middle" class="text-title">Discord API</text>
+    <text x="110" y="65" text-anchor="middle" class="text-sub">(OAuth, Webhooks)</text>
+  </g>
+
+  <line x1="230" y1="170" x2="320" y2="170" class="line"/>
+  <text x="275" y="160" text-anchor="middle" class="text-sub">HTTPS</text>
+
+  <line x1="540" y1="170" x2="620" y2="170" class="line"/>
+  <text x="580" y="160" text-anchor="middle" class="text-sub">TCP/IP</text>
+
+  <line x1="430" y1="250" x2="430" y2="290" class="line"/>
+  <text x="440" y="275" class="text-sub">HTTPS</text>
+</svg>

@@ -3,9 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>MatchOps - UML Specifikace</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <img src = "rocket-league.svg">
+
+    <header class="main-header">
+        <div class="header-container">
+            <h1>MatchOps</h1>
+            <p class="subtitle">UML 2.5 Dokumentace systému pro správu esport turnajů</p>
+        </div>
+    </header>
+
+    <main class="container">
+        
+        <section class="diagram-section">
+            <h2>1. Uživatelské role a oprávnění</h2>
+            <p class="diagram-desc">UML Actor Diagram znázorňující přehled uživatelů, jejich hierarchii a přístupová práva v systému.</p>
+            <div class="diagram-card">
+                <img src="01_actors.svg" alt="Uživatelské role a oprávnění" class="diagram-img">
+            </div>
+        </section>
+
+        <section class="diagram-section">
+            <h2>2. Případy užití (Use Case)</h2>
+            <p class="diagram-desc">UML Use Case Diagram mapující konkrétní funkce systému a akce, které mohou jednotliví uživatelé provádět.</p>
+            <div class="diagram-card">
+                <img src="02_features.svg" alt="Případy užití" class="diagram-img">
+            </div>
+        </section>
+
+        <section class="diagram-section">
+            <h2>3. Databázový model (ERD)</h2>
+            <p class="diagram-desc">UML Class Diagram reprezentující strukturu datových entit v PostgreSQL databázi, jejich vlastnosti a opravené vazby.</p>
+            <div class="diagram-card">
+                <img src="03_er_diagram.svg" alt="Databázový model" class="diagram-img">
+            </div>
+        </section>
+
+        <section class="diagram-section">
+            <h2>4. Architektura a infrastruktura</h2>
+            <p class="diagram-desc">UML Deployment Diagram zobrazující fyzické nasazení serverů, síťové protokoly a integraci s externím Discord API.</p>
+            <div class="diagram-card">
+                <img src="04_architecture.svg" alt="Architektura a infrastruktura" class="diagram-img">
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2026 MatchOps Project.</p>
+    </footer>
+
 </body>
 </html>

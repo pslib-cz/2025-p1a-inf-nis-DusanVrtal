@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <style>
+    .db-box { fill: #1e293b; stroke: #38bdf8; stroke-width: 2; rx: 8; ry: 8; }
+    .db-header { fill: #334155; stroke: #38bdf8; stroke-width: 2; rx: 8; ry: 8; }
+    .db-title { font-family: -apple-system, BlinkMacSystemFont, sans-serif; font-size: 16px; fill: #38bdf8; font-weight: bold; text-anchor: middle; }
+    .db-text { font-family: monospace; font-size: 13px; fill: #f3f4f6; }
+    .db-pk { fill: #fbbf24; font-weight: bold; }
+    .db-line { stroke: #64748b; stroke-width: 2; fill: none; stroke-dasharray: 4 4; }
+    .db-line-solid { stroke: #38bdf8; stroke-width: 2; fill: none; }
+    .cardinality { font-family: -apple-system, BlinkMacSystemFont, sans-serif; font-size: 12px; fill: #94a3b8; }
+  </style>
+
+  <g transform="translate(50, 50)">
+    <rect width="220" height="170" class="db-box"/>
+    <rect width="220" height="35" class="db-header"/>
+    <text x="110" y="23" class="db-title">User</text>
+    <text x="15" y="65" class="db-text db-pk">+ id: UUID [PK]</text>
+    <text x="15" y="85" class="db-text">+ email: String</text>
+    <text x="15" y="105" class="db-text">+ password_hash: String</text>
+    <text x="15" y="125" class="db-text">+ role: EnumRole</text>
+    <text x="15" y="145" class="db-text">+ discord_id: String</text>
+  </g>
+
+  <g transform="translate(50, 300)">
+    <rect width="220" height="130" class="db-box"/>
+    <rect width="220" height="35" class="db-header"/>
+    <text x="110" y="23" class="db-title">Team</text>
+    <text x="15" y="65" class="db-text db-pk">+ id: UUID [PK]</text>
+    <text x="15" y="85" class="db-text">+ name: String</text>
+    <text x="15" y="105" class="db-text">+ captain_id: UUID [FK]</text>
+  </g>
+
+  <g transform="translate(530, 50)">
+    <rect width="220" height="150" class="db-box"/>
+    <rect width="220" height="35" class="db-header"/>
+    <text x="110" y="23" class="db-title">Tournament</text>
+    <text x="15" y="65" class="db-text db-pk">+ id: UUID [PK]</text>
+    <text x="15" y="85" class="db-text">+ name: String</text>
+    <text x="15" y="105" class="db-text">+ game: String</text>
+    <text x="15" y="125" class="db-text">+ format: EnumFormat</text>
+    <text x="15" y="145" class="db-text">+ max_teams: Int</text>
+  </g>
+
+  <g transform="translate(530, 260)">
+    <rect width="220" height="190" class="db-box"/>
+    <rect width="220" height="35" class="db-header"/>
+    <text x="110" y="23" class="db-title">Match</text>
+    <text x="15" y="65" class="db-text db-pk">+ id: UUID [PK]</text>
+    <text x="15" y="85" class="db-text">+ tournament_id: UUID [FK]</text>
+    <text x="15" y="105" class="db-text">+ team1_id: UUID [FK]</text>
+    <text x="15" y="125" class="db-text">+ team2_id: UUID [FK]</text>
+    <text x="15" y="145" class="db-text">+ score_t1: Int</text>
+    <text x="15" y="165" class="db-text">+ score_t2: Int</text>
+    <text x="15" y="185" class="db-text">+ status: EnumStatus</text>
+  </g>
+
+  <line x1="160" y1="220" x2="160" y2="300" class="db-line-solid"/>
+  <text x="170" y="235" class="cardinality">1</text>
+  <text x="170" y="290" class="cardinality">0..1 (Vlastní tým)</text>
+
+  <line x1="640" y1="200" x2="640" y2="260" class="db-line-solid"/>
+  <text x="650" y="215" class="cardinality">1</text>
+  <text x="650" y="250" class="cardinality">1..* (Zápasy pavouka)</text>
+
+  <line x1="270" y1="380" x2="530" y2="380" class="db-line-solid"/>
+  <text x="280" y="375" class="cardinality">0..*</text>
+  <text x="495" y="375" class="cardinality">2 (Účastníci)</text>
+
+  <path d="M 270 135 L 400 135 L 400 320 L 530 320" class="db-line"/>
+  <text x="280" y="130" class="cardinality">1</text>
+  <text x="495" y="315" class="cardinality">0..*</text>
+
+</svg>
