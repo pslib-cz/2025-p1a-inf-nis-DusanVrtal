@@ -1,53 +1,68 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 850" width="100%" height="100%">
   <style>
-    .actor { fill: #f9f9f9; stroke: #333; stroke-width: 2; rx: 5; ry: 5; }
-    .uc { fill: #e2f0d9; stroke: #5e8a3d; stroke-width: 2; }
-    .text { font-family: sans-serif; font-size: 13px; fill: #333; }
-    .actor-text { font-family: sans-serif; font-size: 14px; fill: #333; font-weight: bold; }
-    .line { stroke: #999; stroke-width: 2; fill: none; }
-    .boundary { fill: none; stroke: #333; stroke-width: 2; stroke-dasharray: 5,5; }
+    .system-bg { fill: none; stroke: #475569; stroke-width: 2; }
+    .subsystem-bg { fill: #1e293b; stroke: #334155; stroke-width: 1; }
+    .subsystem-title { font-family: sans-serif; font-size: 12px; fill: #64748b; font-weight: bold; }
+    .actor-box { fill: #0f172a; stroke: #38bdf8; stroke-width: 2; }
+    .actor-lbl { font-family: sans-serif; font-size: 13px; fill: #f3f4f6; font-weight: bold; text-anchor: middle; }
+    .uc-ellipse { fill: #14532d; stroke: #4ade80; stroke-width: 1.5; }
+    .uc-lbl { font-family: sans-serif; font-size: 12px; fill: #f1f5f9; text-anchor: middle; }
+    .c-line { stroke: #64748b; stroke-width: 1.5; fill: none; }
+    .c-line-captain { stroke: #fbbf24; stroke-width: 1.5; fill: none; }
   </style>
 
-  <rect x="250" y="20" width="500" height="560" class="boundary"/>
-  <text x="500" y="45" text-anchor="middle" class="actor-text">Systém pro esport turnaje</text>
+  <rect x="240" y="20" width="650" height="810" class="system-bg" rx="12"/>
 
-  <rect x="50" y="80" width="120" height="40" class="actor"/>
-  <text x="110" y="105" text-anchor="middle" class="actor-text">Administrátor</text>
+  <text x="565" y="45" font-family="sans-serif" font-size="16" fill="#38bdf8" font-weight="bold" text-anchor="middle" letter-spacing="1">MATCHOPS — SYSTÉMOVÉ FUNKCE</text>
 
-  <rect x="50" y="280" width="120" height="40" class="actor"/>
-  <text x="110" y="305" text-anchor="middle" class="actor-text">Kapitán týmu</text>
+  <!-- Connection lines -->
+  <line x1="160" y1="120" x2="340" y2="120" class="c-line" />
+  <line x1="160" y1="120" x2="340" y2="180" class="c-line" />
+  <line x1="160" y1="120" x2="340" y2="240" class="c-line" />
+  <line x1="160" y1="330" x2="340" y2="330" class="c-line-captain" />
+  <line x1="160" y1="330" x2="340" y2="385" class="c-line-captain" />
+  <line x1="160" y1="330" x2="340" y2="440" class="c-line-captain" />
+  <line x1="160" y1="540" x2="340" y2="560" class="c-line" />
+  <line x1="160" y1="540" x2="340" y2="610" class="c-line" />
+  <line x1="160" y1="750" x2="340" y2="780" class="c-line" />
 
-  <rect x="50" y="420" width="120" height="40" class="actor"/>
-  <text x="110" y="445" text-anchor="middle" class="actor-text">Hráč</text>
+  <!-- Actors -->
+  <rect x="30" y="105" width="130" height="30" class="actor-box" rx="4"/><text x="95" y="125" class="actor-lbl">Administrátor</text>
+  <rect x="30" y="315" width="130" height="30" fill="#0f172a" stroke="#fbbf24" stroke-width="2" rx="4"/><text x="95" y="335" class="actor-lbl" fill="#fbbf24">Kapitán týmu</text>
+  <rect x="30" y="525" width="130" height="30" class="actor-box" rx="4"/><text x="95" y="545" class="actor-lbl">Hráč</text>
+  <rect x="30" y="735" width="130" height="30" class="actor-box" rx="4"/><text x="95" y="755" class="actor-lbl">Divák / Host</text>
 
-  <rect x="50" y="520" width="120" height="40" class="actor"/>
-  <text x="110" y="545" text-anchor="middle" class="actor-text">Divák</text>
+  <!-- Module 1: Admin -->
+  <g transform="translate(260, 70)">
+    <rect width="600" height="190" class="subsystem-bg" rx="6"/>
+    <text x="15" y="22" class="subsystem-title">MODUL: SPRÁVA TURNAJŮ &amp; ZÁPASŮ (ADMIN)</text>
+    <ellipse cx="300" cy="50" rx="220" ry="20" class="uc-ellipse"/><text x="300" y="54" class="uc-lbl">Vytvořit turnaj (Formát, Veřejný/Uzavřený)</text>
+    <ellipse cx="300" cy="110" rx="220" ry="20" class="uc-ellipse"/><text x="300" y="114" class="uc-lbl">Automaticky generovat pavouka (Single/Double/RR)</text>
+    <ellipse cx="300" cy="170" rx="220" ry="20" class="uc-ellipse"/><text x="300" y="174" class="uc-lbl">Rozhodnout sporný výsledek ručně</text>
+  </g>
 
-  <ellipse cx="500" cy="80" rx="100" ry="25" class="uc"/>
-  <text x="500" y="85" text-anchor="middle" class="text">Spravovat turnaje / Pavouk</text>
-  <ellipse cx="500" cy="140" rx="100" ry="25" class="uc"/>
-  <text x="500" y="145" text-anchor="middle" class="text">Schvalovat sporné výsledky</text>
-  
-  <ellipse cx="500" cy="220" rx="100" ry="25" class="uc"/>
-  <text x="500" y="225" text-anchor="middle" class="text">Založit a spravovat tým</text>
-  <ellipse cx="500" cy="280" rx="100" ry="25" class="uc"/>
-  <text x="500" y="285" text-anchor="middle" class="text">Přihlásit tým do turnaje</text>
-  <ellipse cx="500" cy="340" rx="100" ry="25" class="uc"/>
-  <text x="500" y="345" text-anchor="middle" class="text">Zadat výsledek a důkaz</text>
+  <!-- Module 2: Kapitán -->
+  <g transform="translate(260, 280)">
+    <rect width="600" height="210" class="subsystem-bg" rx="6"/>
+    <text x="15" y="22" class="subsystem-title">MODUL: SPRÁVA TÝMU (POUZE KAPITÁN / TRENÉR)</text>
+    <ellipse cx="300" cy="50" rx="220" ry="20" fill="#14532d" stroke="#fbbf24" stroke-width="1.5"/><text x="300" y="54" class="uc-lbl" font-weight="bold">Spravovat soupisku (Hráči &amp; Náhradníci)</text>
+    <ellipse cx="300" cy="105" rx="220" ry="20" class="uc-ellipse"/><text x="300" y="109" class="uc-lbl">Zadat skóre a nahrát screenshot jako důkaz</text>
+    <ellipse cx="300" cy="160" rx="220" ry="20" class="uc-ellipse"/><text x="300" y="164" class="uc-lbl">Potvrdit finální výsledek zápasu (Oba kapitáni)</text>
+  </g>
 
-  <ellipse cx="500" cy="420" rx="100" ry="25" class="uc"/>
-  <text x="500" y="425" text-anchor="middle" class="text">Zobrazit profil a statistiky</text>
+  <!-- Module 3: Hráč -->
+  <g transform="translate(260, 510)">
+    <rect width="600" height="140" fill="#1e293b" stroke="#38bdf8" stroke-width="1" rx="6"/>
+    <text x="15" y="22" class="subsystem-title" fill="#38bdf8">MODUL: SEKCE REGISTROVANÉHO HRÁČE</text>
+    <ellipse cx="300" cy="50" rx="220" ry="20" fill="#1e3a8a" stroke="#60a5fa" stroke-width="1.5"/><text x="300" y="54" class="uc-lbl">Založit nový tým (Uživatel se stává kapitánem)</text>
+    <ellipse cx="300" cy="100" rx="220" ry="20" fill="#1e3a8a" stroke="#60a5fa" stroke-width="1.5"/><text x="300" y="104" class="uc-lbl">Připojit se do existujícího týmu přes pozvánku</text>
+  </g>
 
-  <ellipse cx="500" cy="520" rx="100" ry="25" class="uc"/>
-  <text x="500" y="525" text-anchor="middle" class="text">Prohlížet žebříčky a turnaje</text>
-
-  <line x1="170" y1="100" x2="400" y2="80" class="line"/>
-  <line x1="170" y1="100" x2="400" y2="140" class="line"/>
-
-  <line x1="170" y1="300" x2="400" y2="220" class="line"/>
-  <line x1="170" y1="300" x2="400" y2="280" class="line"/>
-  <line x1="170" y1="300" x2="400" y2="340" class="line"/>
-
-  <line x1="170" y1="440" x2="400" y2="420" class="line"/>
-  <line x1="170" y1="540" x2="400" y2="520" class="line"/>
+  <!-- Module 4: Statistiky -->
+  <g transform="translate(260, 680)">
+    <rect width="600" height="130" class="subsystem-bg" rx="6"/>
+    <text x="15" y="22" class="subsystem-title">MODUL: STATISTIKY &amp; INTEGRACE</text>
+    <ellipse cx="300" cy="50" rx="220" ry="20" class="uc-ellipse"/><text x="300" y="54" class="uc-lbl">Zobrazit herní profil (E-mail / Discord, KDA, Historie)</text>
+    <ellipse cx="300" cy="100" rx="220" ry="20" class="uc-ellipse"/><text x="300" y="104" class="uc-lbl">Procházet globální žebříček a turnaje bez registrace</text>
+  </g>
 </svg>
