@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MatchOps - UML Specifikace</title>
+    <title>MatchOps - UML Specifikace & Požadavky</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -22,7 +22,6 @@
         </div>
     </nav>
 
-    <!-- TAB: DIAGRAMY -->
     <main class="container" id="tab-diagramy">
 
         <section class="diagram-section">
@@ -67,85 +66,85 @@
 
     </main>
 
-    <!-- TAB: POŽADAVKY -->
     <main class="container hidden" id="tab-pozadavky">
 
         <div class="req-header">
             <h2>Katalog požadavků</h2>
-            <p class="diagram-desc">Systém pro správu esport turnajů — MatchOps</p>
+            <p class="diagram-desc">Kompletní specifikace systému MatchOps</p>
         </div>
 
         <h3 class="req-section-title">Funkční požadavky</h3>
 
         <div class="req-group">
             <h4 class="req-group-title">Správa uživatelů a rolí</h4>
-            <div class="req-item"><span class="req-id">F1.1</span> Registrace přes e-mail nebo přihlášení přes Discord OAuth.</div>
-            <div class="req-item"><span class="req-id">F1.2</span> Systém rozlišuje 4 role: <span class="tag tag-admin">Administrátor</span> <span class="tag tag-captain">Kapitán</span> <span class="tag tag-player">Hráč</span> <span class="tag tag-guest">Divák</span></div>
-        </div>
-
-        <div class="req-group">
-            <h4 class="req-group-title">Registrace a správa týmů</h4>
-            <div class="req-item"><span class="req-id">F2.1</span> Kapitán vytvoří tým, zvolí název, volitelně nahraje logo a vygeneruje pozvánkový odkaz.</div>
-            <div class="req-item"><span class="req-id">F2.2</span> Kapitán spravuje soupisku — přidává/odebírá hráče, označuje náhradníky. Počet hráčů závisí na hře.</div>
-        </div>
-
-        <div class="req-group">
-            <h4 class="req-group-title">Správa turnajů a generování pavouka</h4>
-            <div class="req-item"><span class="req-id">F3.1</span> Organizátor vyplní název, hru, datum, max. počet týmů a formát. Turnaj může být veřejný nebo uzavřený.</div>
-            <div class="req-item"><span class="req-id">F3.2</span> Po uzavření registrací systém automaticky vygeneruje pavouk. Podporované formáty:
+            <div class="req-item"><span class="req-id">F1.1</span> Registrace a přihlašování: Přes e-mail nebo přes Discord OAuth (ideální pro komunitu hráčů).</div>
+            <div class="req-item"><span class="req-id">F1.2</span> Rozlišení rolí:
                 <ul class="req-list">
-                    <li><strong>Single Elimination</strong> — klasický pavouk, jedna prohra a je konec</li>
-                    <li><strong>Double Elimination</strong> — poražení dostanou druhou šanci v opravném pavouku</li>
-                    <li><strong>Round Robin</strong> — každý s každým, výsledky se sčítají do tabulky</li>
+                    <li><span class="tag tag-admin">Administrátor / Organizátor</span> — Plná práva (zakládání turnajů, správa uživatelů, ruční zásahy).</li>
+                    <li><span class="tag tag-captain">Kapitán týmu</span> — Zakládá tým, zve hráče a přihlašuje tým do turnajů.</li>
+                    <li><span class="tag tag-player">Hráč</span> — Vlastní profil, statistiky, historie odehraných zápasů.</li>
+                    <li><span class="tag tag-guest">Divák / Host</span> — Prohlížení turnajů a žebříčků bez nutnosti registrace.</li>
                 </ul>
             </div>
         </div>
 
         <div class="req-group">
+            <h4 class="req-group-title">Registrace a správa týmů</h4>
+            <div class="req-item"><span class="req-id">F2.1</span> Založení týmu: Výběr názvu, volitelné logo a generování unikátního pozvánkového odkazu.</div>
+            <div class="req-item"><span class="req-id">F2.2</span> Soupiska: Kapitán přidává/odebírá hráče a označuje náhradníky. Kapacita závisí na zvolené hře.</div>
+        </div>
+
+        <div class="req-group">
+            <h4 class="req-group-title">Správa turnajů a generování pavouka</h4>
+            <div class="req-item"><span class="req-id">F3.1</span> Vytvoření turnaje: Nastavení názvu, hry, data, kapacity a typu (veřejný / uzavřený na pozvánky).</div>
+            <div class="req-item"><span class="req-id">F3.2</span> Automatické generování pavouka: Podpora pro formáty Single Elimination, Double Elimination a Round Robin (každý s každým).</div>
+        </div>
+
+        <div class="req-group">
             <h4 class="req-group-title">Zapisování výsledků a zápasů</h4>
-            <div class="req-item"><span class="req-id">F4.1</span> Kapitán zadá skóre a nahraje screenshot jako důkaz. Výsledek musí potvrdit oba kapitáni.</div>
-            <div class="req-item"><span class="req-id">F4.2</span> Při neshodě nebo nečinnosti jednoho kapitána může organizátor výsledek rozhodnout ručně.</div>
-            <div class="req-item"><span class="req-id">F4.3</span> Historie zápasů se skóre a screenshotem je trvale uložena v systému.</div>
+            <div class="req-item"><span class="req-id">F4.1</span> Zadávání výsledků: Kapitán zadá skóre a doloží screenshot. Výsledek musí potvrdit obě strany.</div>
+            <div class="req-item"><span class="req-id">F4.2</span> Schvalování a spory: Možnost ručního zásahu organizátora v případě neshody nebo nečinnosti kapitánů.</div>
+            <div class="req-item"><span class="req-id">F4.3</span> Historie zápasů: Trvalé uložení všech výsledků a screenshotů v systému.</div>
         </div>
 
         <div class="req-group">
             <h4 class="req-group-title">Statistiky hráčů a žebříček</h4>
-            <div class="req-item"><span class="req-id">F5.1</span> Hráčský profil zobrazuje počet turnajů, výher a proher. Herně specifické metriky (KDA, počet gólů…) dle hry.</div>
-            <div class="req-item"><span class="req-id">F5.2</span> Veřejná tabulka nejlepších hráčů a týmů podle bodů z turnajů.</div>
+            <div class="req-item"><span class="req-id">F5.1</span> Individuální statistiky: Profil zobrazuje win-rate a herní metriky podle titulu (KDA pro LoL/CS, góly pro FIFA).</div>
+            <div class="req-item"><span class="req-id">F5.2</span> Globální žebříček: Veřejná tabulka nejlepších hráčů a týmů na základě bodů získaných z turnajů.</div>
         </div>
 
         <div class="req-group">
             <h4 class="req-group-title">Propojení s Discordem</h4>
-            <div class="req-item"><span class="req-id">F6.1</span> Organizátor zadá webhook URL a systém posílá oznámení — nový turnaj, start zápasu, výsledky.</div>
-            <div class="req-item"><span class="req-id req-optional">F6.2 volitelné</span> Automatické vytváření hlasových kanálů po zahájení zápasu (nízká priorita).</div>
+            <div class="req-item"><span class="req-id">F6.1</span> Notifikace přes webhook: Automatické odesílání zpráv o nových turnajích, startech zápasů a výsledcích na Discord server.</div>
+            <div class="req-item"><span class="req-id req-optional">F6.2 volitelné</span> Automatické vytváření hlasových kanálů pro týmy po zahájení zápasu (nízká priorita).</div>
         </div>
 
         <h3 class="req-section-title nf">Nefunkční požadavky</h3>
 
         <div class="req-group">
             <h4 class="req-group-title">Bezpečnost a ochrana dat</h4>
-            <div class="req-item"><span class="req-id req-nf">NF1.1</span> Hesla hashována pomocí bcrypt — nikdy v plaintextu.</div>
-            <div class="req-item"><span class="req-id req-nf">NF1.2</span> Kapitán nemůže potvrdit vlastní výsledek — musí schválit druhá strana nebo admin.</div>
-            <div class="req-item"><span class="req-id req-nf">NF1.3</span> Každý API požadavek ověřuje oprávnění uživatele.</div>
+            <div class="req-item"><span class="req-id req-nf">NF1.1</span> Hashování hesel: Bezpečné ukládání hesel pomocí algoritmu bcrypt, nikdy v čistém textu.</div>
+            <div class="req-item"><span class="req-id req-nf">NF1.2</span> Ochrana proti podvodům: Zákaz samopotvrzení výsledků bez schválení protihráčem či adminem.</div>
+            <div class="req-item"><span class="req-id req-nf">NF1.3</span> Autorizace: Striktní ověřování API práv (uživatel nemůže modifikovat cizí zápasy).</div>
         </div>
 
         <div class="req-group">
             <h4 class="req-group-title">Dostupnost a výkon</h4>
-            <div class="req-item"><span class="req-id req-nf">NF2.1</span> Pavouk a žebříčky se načtou do 2 s (max 5 s při špičce).</div>
-            <div class="req-item"><span class="req-id req-nf">NF2.2</span> Responzivní design — plná funkčnost na mobilních zařízeních.</div>
+            <div class="req-item"><span class="req-id req-nf">NF2.1</span> Rychlost odezvy: Načtení pavouka a žebříčků do 2 sekund (při špičkách max. 5 sekund).</div>
+            <div class="req-item"><span class="req-id req-nf">NF2.2</span> Responzivita: Plná optimalizace pro mobilní telefony, ze kterých budou kapitáni zadávat výsledky.</div>
         </div>
 
         <div class="req-group">
             <h4 class="req-group-title">Spolehlivost a rozšiřitelnost</h4>
-            <div class="req-item"><span class="req-id req-nf">NF3.1</span> Souběžný přístup desítek kapitánů — transakce v DB řešeny správně.</div>
-            <div class="req-item"><span class="req-id req-nf">NF3.2</span> Přidání nové hry nesmí vyžadovat přepisování celého systému.</div>
+            <div class="req-item"><span class="req-id req-nf">NF3.1</span> Souběžný přístup: Bezproblémové zvládnutí zápisů od desítek kapitánů najednou pomocí správně nastavených databázových transakcí.</div>
+            <div class="req-item"><span class="req-id req-nf">NF3.2</span> Modularita: Architektura umožňující snadné přidávání nových her bez nutnosti zásahu do jádra aplikace.</div>
         </div>
 
         <div class="req-group">
             <h4 class="req-group-title">Použité technologie</h4>
-            <div class="req-item"><span class="req-id req-nf">NF4.1</span> <strong>Databáze:</strong> PostgreSQL — podpora transakcí a spolehlivost při souběžném přístupu.</div>
-            <div class="req-item"><span class="req-id req-nf">NF4.2</span> <strong>Backend:</strong> REST API — Node.js nebo Python (FastAPI), zatím nerozhodnuto.</div>
-            <div class="req-item"><span class="req-id req-nf">NF4.3</span> <strong>Frontend:</strong> Responzivní webová aplikace, důraz na rychlé načítání na mobilech.</div>
+            <div class="req-item"><span class="req-id req-nf">NF4.1</span> Databáze: PostgreSQL zvolená pro pokročilou správu transakcí a spolehlivost při vysoké zátěži.</div>
+            <div class="req-item"><span class="req-id req-nf">NF4.2</span> Backend: REST API postavené na Node.js nebo Pythonu (FastAPI).</div>
+            <div class="req-item"><span class="req-id req-nf">NF4.3</span> Frontend: Rychlá a responzivní webová aplikace s důrazem na mobilní zobrazení.</div>
         </div>
 
     </main>
@@ -156,10 +155,25 @@
 
     <script>
         function showTab(name) {
-            document.querySelectorAll('main[id^="tab-"]').forEach(el => el.classList.add('hidden'));
-            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-            document.getElementById('tab-' + name).classList.remove('hidden');
-            event.target.classList.add('active');
+            // Skryje všechny hlavní sekce
+            document.querySelectorAll('main.container').forEach(el => {
+                el.classList.add('hidden');
+            });
+            // Odezme aktivní třídu ze všech tlačítek
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Zobrazí vybranou sekci
+            const activeTab = document.getElementById('tab-' + name);
+            if (activeTab) {
+                activeTab.classList.remove('hidden');
+            }
+            
+            // Nastaví tlačítko jako aktivní
+            if (window.event && window.event.target) {
+                window.event.target.classList.add('active');
+            }
         }
     </script>
 
